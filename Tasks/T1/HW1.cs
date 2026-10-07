@@ -35,7 +35,6 @@ namespace CS_SoftServeTasks.Tasks
             Console.Write($"Name: { name }, Age: { age }\n");
             Console.ReadLine();
 
-
         }
 
         public static void RunTask3()
