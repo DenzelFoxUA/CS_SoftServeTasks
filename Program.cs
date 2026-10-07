@@ -7,7 +7,14 @@ namespace CS_SoftServeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //Tasks.HW1.RunTask1();
+            //Tasks.HW1.RunTask2();
+            //Tasks.HW1.RunTask3();
+
+            Tasks.Task1.RunTask1();
+            Tasks.Task1.RunTask2();
+            Tasks.Task1.RunTask3();
+            Tasks.Task1.RunTask4();
         }
     }
 }
