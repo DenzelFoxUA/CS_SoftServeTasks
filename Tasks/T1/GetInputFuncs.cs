@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace CS_SoftServeTasks.Tasks.Funcs
 {
@@ -12,7 +13,7 @@ namespace CS_SoftServeTasks.Tasks.Funcs
             {
                 Console.Clear();
                 Console.WriteLine(message);
-                result = Console.ReadLine();
+                result = Console.ReadLine()!;
 
                 if (result == "")
                 {
@@ -39,7 +40,7 @@ namespace CS_SoftServeTasks.Tasks.Funcs
                 Console.Clear();
                 Console.WriteLine(message);
                 Console.Write("Value: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
                 isInputCorrect = int.TryParse(input, out source);
 
                 if (!isInputCorrect)
@@ -61,7 +62,7 @@ namespace CS_SoftServeTasks.Tasks.Funcs
                 Console.Clear();
                 Console.WriteLine(message);
                 Console.Write("Value: ");
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
                 isInputCorrect = double.TryParse(input, out source);
 
                 if (!isInputCorrect)
@@ -74,6 +75,63 @@ namespace CS_SoftServeTasks.Tasks.Funcs
             while (!isInputCorrect);
         }
 
+        public static void GetDecimalInput(ref decimal source, string message = "")
+        {
+            bool isInputCorrect = false;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(message);
+                Console.Write("Value: ");
+                string input = Console.ReadLine()!;
+                isInputCorrect = decimal.TryParse(input, out source);
+
+                if (!isInputCorrect)
+                {
+                    Console.WriteLine("Error::Wrong input. Press enter.");
+                    Console.ReadLine();
+                }
+
+            }
+            while (!isInputCorrect);
+        }
+
+        public static void GetColorInput(ref Color source, string message = "")
+        {
+            bool isInputCorrect = false;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(message);
+                Console.Write("Value: ");
+                string input = Console.ReadLine()!;
+
+                if(input != null)
+                {
+                    Color selectedColor = Color.FromName(input);
+
+                    if (selectedColor.IsKnownColor)
+                    {
+                        isInputCorrect = true;
+                        source = selectedColor;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unknown color!");
+                        Console.ReadLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Input is null.");
+                    Console.ReadLine();
+                }
+
+            }
+            while (!isInputCorrect);
+        }
 
     }
 
