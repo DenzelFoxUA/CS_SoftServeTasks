@@ -14,8 +14,8 @@ namespace CS_SoftServeTasks.Tasks
 
             string message = "Enter integer number.";
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref a, message);
-            Funcs.GetInputFuncs.GetIntegerInput(ref b, message);
+            Funcs.MyFuncs.GetIntegerInput(ref a, message);
+            Funcs.MyFuncs.GetIntegerInput(ref b, message);
 
             Console.WriteLine($"a+b = { a } + { b } = { a + b }\n" +
                 $"a-b = { a } - { b } = { a - b }\n" +
@@ -38,7 +38,7 @@ namespace CS_SoftServeTasks.Tasks
         {
             Console.Clear();
             string message = "How are you?";
-            string input = Funcs.GetInputFuncs.GetStringInput(message);
+            string input = Funcs.MyFuncs.GetStringInput(message);
             string answer = "You are " + Regex.Replace(input, @"^(?:(?:I am|I'm|Me\?)\s*)+", "");
             Console.WriteLine(answer + "\nPress enter");
             Console.ReadLine();
@@ -85,8 +85,8 @@ namespace CS_SoftServeTasks.Tasks
 
             string message = "Enter integer number.";
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref a, message);
-            Funcs.GetInputFuncs.GetIntegerInput(ref b, message);
+            Funcs.MyFuncs.GetIntegerInput(ref a, message);
+            Funcs.MyFuncs.GetIntegerInput(ref b, message);
 
             string comparisonResult = a > 0 && b > 0 ? "true" : "false";
 

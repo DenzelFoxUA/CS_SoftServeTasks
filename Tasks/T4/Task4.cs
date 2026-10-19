@@ -41,7 +41,7 @@ namespace CS_SoftServeTasks.Tasks
 
         public void Input()
         {
-            string company = Funcs.GetInputFuncs.GetStringInput("Enter company name");
+            string company = Funcs.MyFuncs.GetStringInput("Enter company name");
 
             if (Enum.TryParse<Companies>(company, true, out Companies _company)
                 && Enum.IsDefined(_company))
@@ -55,15 +55,15 @@ namespace CS_SoftServeTasks.Tasks
                 Console.ReadLine();
             }
 
-            string nameInput = Funcs.GetInputFuncs.GetStringInput("Enter name of a Car");
+            string nameInput = Funcs.MyFuncs.GetStringInput("Enter name of a Car");
             Name = nameInput;
 
             Color col = Color.Transparent;
-            Funcs.GetInputFuncs.GetColorInput(ref col, "Enter color of a Car");
+            Funcs.MyFuncs.GetColorInput(ref col, "Enter color of a Car");
             CarColor = col;
 
             decimal price = 0.0m;
-            Funcs.GetInputFuncs.GetDecimalInput(ref price, "Enter pirce $");
+            Funcs.MyFuncs.GetDecimalInput(ref price, "Enter pirce $");
             Price = price;
 
         }

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace CS_SoftServeTasks.Tasks.Funcs
 {
-    public static class GetInputFuncs
+    public static class MyFuncs
     {
         public static string GetStringInput(string message = "")
         {
@@ -142,6 +143,19 @@ namespace CS_SoftServeTasks.Tasks.Funcs
             return (year % 4 == 0 && year % 100 != 0)
                    || year % 400 == 0;
         }
+
+
+        public static void PrintCollection<T>(in IEnumerable<T> collection)
+        {
+            foreach(var item in collection)
+            {
+                Console.WriteLine($"{item} ");
+            }
+            Console.WriteLine("Press enter");
+            Console.ReadLine();
+        }
     }
+
+  
 
 }

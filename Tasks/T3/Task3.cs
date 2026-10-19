@@ -36,8 +36,8 @@ namespace CS_SoftServeTasks.Tasks
             int numA = 0;
             int numB = 0;
             int counter = 0;
-            Funcs.GetInputFuncs.GetIntegerInput(ref numA, "Enter frist num: ");
-            Funcs.GetInputFuncs.GetIntegerInput(ref numB, "Enter second num: ");
+            Funcs.MyFuncs.GetIntegerInput(ref numA, "Enter frist num: ");
+            Funcs.MyFuncs.GetIntegerInput(ref numB, "Enter second num: ");
 
             for (int i = numA; i <= numB; i++)
             {
@@ -52,7 +52,7 @@ namespace CS_SoftServeTasks.Tasks
 
         public static void RunTask2()
         {
-            string uInput = Funcs.GetInputFuncs.GetStringInput("Enter a word or sentence: ");
+            string uInput = Funcs.MyFuncs.GetStringInput("Enter a word or sentence: ");
             for (int i = 0; i < uInput.Length; i++)
             {
                 if (i % 2 != 0 && uInput[i] != ' ')
@@ -86,7 +86,7 @@ namespace CS_SoftServeTasks.Tasks
             do
             {
                 Console.Clear();
-                string uInput = Funcs.GetInputFuncs.GetStringInput("Enter name of a drink: ");
+                string uInput = Funcs.MyFuncs.GetStringInput("Enter name of a drink: ");
 
                 foreach (var drink in drinks)
                 {
@@ -117,7 +117,7 @@ namespace CS_SoftServeTasks.Tasks
             int steps = 0;
             do
             {
-                Funcs.GetInputFuncs.GetIntegerInput(ref uInput, "Enter any number");
+                Funcs.MyFuncs.GetIntegerInput(ref uInput, "Enter any number");
                 if(uInput > 0)
                 {
                     sum += uInput;
@@ -134,7 +134,7 @@ namespace CS_SoftServeTasks.Tasks
         {
             int year = 0;
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref year, "Enter year value");
+            Funcs.MyFuncs.GetIntegerInput(ref year, "Enter year value");
 
             Console.WriteLine(Funcs.MyBasicFunctions.IsLeapYear(year) ? "True" : "False");
         }
@@ -143,7 +143,7 @@ namespace CS_SoftServeTasks.Tasks
         {
             int uInput = 0;
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref uInput, "Enter int number");
+            Funcs.MyFuncs.GetIntegerInput(ref uInput, "Enter int number");
 
             int bufNum = uInput;
 
@@ -167,7 +167,7 @@ namespace CS_SoftServeTasks.Tasks
         {
             int uInput = 0;
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref uInput, "Enter int number");
+            Funcs.MyFuncs.GetIntegerInput(ref uInput, "Enter int number");
 
             int bufNum = uInput;
             bool areOdd = true;

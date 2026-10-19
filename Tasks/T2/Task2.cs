@@ -27,8 +27,8 @@ namespace CS_SoftServeTasks.Tasks
             int day = 0, 
                 month = 0;
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref day, $"Enter day value");
-            Funcs.GetInputFuncs.GetIntegerInput(ref month, "Enter month value");
+            Funcs.MyFuncs.GetIntegerInput(ref day, $"Enter day value");
+            Funcs.MyFuncs.GetIntegerInput(ref month, "Enter month value");
 
             string canRepresent = (month >= 1 && month <= 12) && (day >= 1 && day <= 31) ? "True" 
                 : "False";
@@ -42,7 +42,7 @@ namespace CS_SoftServeTasks.Tasks
         public static void RunTask2()
         {
             double num = 0;
-            Funcs.GetInputFuncs.GetDoubleInput(ref num, "Enter double number");
+            Funcs.MyFuncs.GetDoubleInput(ref num, "Enter double number");
             int sum = 0;
             int numbersCountNeeded = 2;
 
@@ -77,7 +77,7 @@ namespace CS_SoftServeTasks.Tasks
         {
             int hh = 0;
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref hh, "Enter hour of a day");
+            Funcs.MyFuncs.GetIntegerInput(ref hh, "Enter hour of a day");
 
             if (hh >= 22 && hh < 24 || hh >= 0 && hh < 5)
                 Console.WriteLine("Good night!");

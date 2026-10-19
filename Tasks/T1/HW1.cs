@@ -12,7 +12,7 @@ namespace CS_SoftServeTasks.Tasks
 
             string messageToShow = "Enter value that represents side of a Square";
 
-            Funcs.GetInputFuncs.GetIntegerInput(ref a, messageToShow);
+            Funcs.MyFuncs.GetIntegerInput(ref a, messageToShow);
 
             Console.Clear();
             Console.WriteLine("Perimeter: " + a * 4);
@@ -25,11 +25,11 @@ namespace CS_SoftServeTasks.Tasks
             Console.Clear();
 
             string messageToShow = "What is your name?";
-            string name = Funcs.GetInputFuncs.GetStringInput(messageToShow);
+            string name = Funcs.MyFuncs.GetStringInput(messageToShow);
 
             int age = 0;
             messageToShow = "How old are you, " + name + "?";
-            Funcs.GetInputFuncs.GetIntegerInput(ref age, messageToShow);
+            Funcs.MyFuncs.GetIntegerInput(ref age, messageToShow);
 
             Console.Clear();
             Console.Write($"Name: { name }, Age: { age }\n");
@@ -43,7 +43,7 @@ namespace CS_SoftServeTasks.Tasks
             string messageToShow = "Enter radius of a CIRCLE";
 
             double r = 0;
-            Funcs.GetInputFuncs.GetDoubleInput(ref r, messageToShow);
+            Funcs.MyFuncs.GetDoubleInput(ref r, messageToShow);
 
             Console.Clear();
             Console.Write($"Length: { 2 * r * Math.PI },\n" +
