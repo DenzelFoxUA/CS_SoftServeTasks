@@ -1,6 +1,7 @@
 ﻿
 using CS_SoftServeTasks.Tasks;
 using System;
+using System.Collections.Generic;
 
 namespace CS_SoftServeTasks
 {
@@ -9,7 +10,7 @@ namespace CS_SoftServeTasks
 
         static void Main(string[] args)
         {
-            Task5.RunTask2();
+            HW6.RunTask();
         }
     }
 }

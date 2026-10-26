@@ -54,6 +54,28 @@ namespace CS_SoftServeTasks.Tasks.Funcs
             while (!isInputCorrect);
         }
 
+        public static void GetUnsignedIntegerInput(ref uint source, string message = "")
+        {
+            bool isInputCorrect = false;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine(message);
+                Console.Write("Value: ");
+                string input = Console.ReadLine()!;
+                isInputCorrect = uint.TryParse(input, out source);
+
+                if (!isInputCorrect)
+                {
+                    Console.WriteLine("Error::Wrong input. Press enter.");
+                    Console.ReadLine();
+                }
+
+            }
+            while (!isInputCorrect);
+        }
+
         public static void GetDoubleInput(ref double source, string message = "")
         {
             bool isInputCorrect = false;
