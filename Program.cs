@@ -10,7 +10,7 @@ namespace CS_SoftServeTasks
 
         static void Main(string[] args)
         {
-            HW6.RunTask();
+            Task7.RunTask();
         }
     }
 }
