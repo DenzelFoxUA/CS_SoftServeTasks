@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
 
 
 namespace CS_SoftServeTasks.Tasks
@@ -80,60 +81,67 @@ namespace CS_SoftServeTasks.Tasks
         }
     }
 
+    public static class ShapeFactory
+    {
+        private static readonly Dictionary<string, Func<double, Shape>> Factories = new()
+        {
+            ["circle"] = size => new Circle(size),
+            ["square"] = size => new Square(size)
+        };
+
+        public static Shape? GetShape(string name, double size)
+        {
+            var searcName = name.Trim().ToLowerInvariant();
+
+            if (Factories.TryGetValue(searcName, out var shape))
+                return shape(size);
+            else
+                return null;
+        }
+
+    }
+
     internal class HW6
     {
-        public static readonly List<string> KNOWN_SHAPES = new()
-        { 
-            "Square", 
-            "Circle" 
-        };
 
         public static Shape GetShapeInput()
         {
-
-            double dimentionSize = 0;
-            string name = "";
-            bool hasShape = false;
-
             do
             {
-                name = Funcs.MyFuncs.GetStringInput("Enter shape name");
+                double dimentionSize = 0;
+                string name = Funcs.MyFuncs.GetStringInput("Enter shape name");
                 Funcs.MyFuncs.GetDoubleInput(ref dimentionSize, "Enter size of a shape");
 
-                if (KNOWN_SHAPES.Contains(name))
-                {
-                    hasShape = true;
-                }
-                else
+                var shape = ShapeFactory.GetShape(name, dimentionSize);
+
+                if (shape is null)
                 {
                     Console.WriteLine("No such shape on the list");
                     Console.ReadLine();
                 }
+                else
+                {
+                    return shape;
+                }
             }
-            while (!hasShape);
-
-            if(name == "Circle")
-            {
-                return new Circle(dimentionSize);
-                
-            }
-            else if(name == "Square")
-            {
-                return new Square(dimentionSize);
-            }
-            else
-            {
-                return null!;
-            }   
+            while (true);
         }
+
 
         public static void RunTask()
         {
             List<Shape> shapes = new List<Shape>();
 
-            int numberOfShapes = 4;
+            //manual add
+            //shapes.Add(new Circle(12));
+            //shapes.Add(new Circle(5));
+            //shapes.Add(new Square(12));
+            //shapes.Add(new Square(17));
 
-            for(int i = 1; i <= numberOfShapes; i++)
+            //user input
+            int numberOfShapes = 2;
+
+            for (int i = 1; i <= numberOfShapes; i++)
             {
                 var shp = GetShapeInput();
 
@@ -143,12 +151,28 @@ namespace CS_SoftServeTasks.Tasks
                 }
             }
 
-            //sort by area
-            shapes.Sort();
-
+            //print all
+            Console.WriteLine("--- Shapes: ---");
             foreach(var shape in shapes)
             {
-                Console.WriteLine(shape + $" => Area = {shape.GetArea()}");
+                Console.WriteLine(shape);
+            }
+
+            //sort by perimeter
+            shapes.Sort((a, b) =>
+                a.GetPerimeter().CompareTo(b.GetPerimeter()));
+
+            var maxPerimeterShape = shapes.LastOrDefault();
+            Console.WriteLine("--- Max Perimeter shape: ---");
+            Console.WriteLine(maxPerimeterShape + 
+                $" => Perimeter = { maxPerimeterShape!.GetPerimeter() }");
+
+            //sort by area
+            shapes.Sort();
+            Console.WriteLine("--- Shapes sorted by Area: ---");
+            foreach (var shape in shapes)
+            {
+                Console.WriteLine(shape + $" => Area = { shape.GetArea() }");
             }
         }
     }
