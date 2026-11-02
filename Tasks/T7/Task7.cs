@@ -84,24 +84,24 @@ namespace CS_SoftServeTasks.Tasks
     {
         public static void RunTask()
         {
-            //WorkWithExceptions.StudentMain();
+            WorkWithExceptions.StudentMain();
 
-            //try
-            //{
-            //    double a = 12,
-            //        b = 1.01;
+            try
+            {
+                double a = 12,
+                    b = 1.01;
 
-            //    Console.Write($"Trying to {a}/{b} = ");
-            //    WorkWithExceptions.DivisionOfDoubles(a, b);
-            //}
-            //catch(DivideByZeroException ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
-            //catch(Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //}
+                Console.Write($"Trying to {a}/{b} = ");
+                WorkWithExceptions.DivisionOfDoubles(a, b);
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             try
             {

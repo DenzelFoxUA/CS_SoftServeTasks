@@ -22,6 +22,8 @@ namespace CS_SoftServeTasks.Tasks
 
     public class Programmer : IDeveloper
     {
+
+        public string language = "";
         public string Language { get; set; }
         public string Tool { get; set; }
 
@@ -179,6 +181,17 @@ namespace CS_SoftServeTasks.Tasks
             }
 
             Console.ReadLine();
+
+            Stack<string> stack = new Stack<string>();
+
+            stack.Contains()
+
+            Queue<string> qu = new Queue<string>();
+
+            qu.Dequeue()
+
+            List<string> list = new List<string>();
+            list.Re
 
         }
     }
